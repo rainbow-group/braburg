@@ -1,0 +1,27 @@
+.about {
+  background-image: url("~src/assets/images/bg_about.jpg");
+  background-repeat: no-repeat ;
+  height: 700px;
+}
+
+.about-p{
+  position: absolute;
+  width: 720px;
+  background: #041523;
+  height: 200px;
+  right: 0px;
+  top: 240px;
+}
+
+.about-title{
+  color:#FFF; font-family:Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+  margin-left: 40px;
+
+  div{
+    width: 660px;
+    font-size:12px;
+    padding-top:10px;
+    line-height:25px;
+  }
+}
