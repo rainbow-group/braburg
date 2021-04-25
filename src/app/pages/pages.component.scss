@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  background-color: #262626;
+  overFlow-x: hidden;
+  color: #666;
+  -webkit-text-size-adjust: none;
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 1100px;
+  margin: 0 auto;
+  height: auto;
+  background: url(~src/assets/images/bg1.jpg) no-repeat;
+  background-color: #fff;
+  height: 100%;
+}

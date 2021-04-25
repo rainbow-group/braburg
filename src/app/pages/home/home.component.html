@@ -1,14 +1,26 @@
-<div class="about">
-  <div class="about-p">
+<div class="content">
+  <mat-toolbar class="rb-header">
+    <a [routerLink]="['home']"><img [src]="images.logo"></a>
+    <div fxFlex="1 1 auto"></div>
+    <div class="menu-right">
+      <button [routerLink]="['/app', 'about']" mat-button>品牌文化</button>
+      <button [routerLink]="['/app', 'products']" mat-button>产品中心</button>
+      <button [routerLink]="['/app', 'join']" mat-button>招商加盟</button>
+      <button [routerLink]="['/app', 'contact']" mat-button>联系我们</button>
+    </div>
+  </mat-toolbar>
+  <div class="about">
+    <div class="about-p">
       <div class="about-title">
-        <img [src]="aboutImg"/>
+        <img [src]="images.about"/>
         <div>
           来自德国的世界顶级专业厨房电器品牌BRABURG，凭其非凡的品质演绎了一个高端品牌的创新历程和领驭之道。
           BRABURG这个动听的名字，来自于德国著名的勃兰登堡州，与柏林构成德国的首都地区，拥有美丽的松树林、丘陵、湖泊，为BRABURG这个独具匠心的品牌树立了高品质、艺术化的独特个性。
         </div>
       </div>
-
-
+    </div>
   </div>
-
+  <mat-toolbar class="rb-footer">
+    <span>Website of BRAGURG</span>
+  </mat-toolbar>
 </div>

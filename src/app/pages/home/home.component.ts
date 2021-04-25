@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as constants from '../../shared/constants';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  aboutImg = 'assets/images/tt1.png';
+
+  images = constants.images.home;
   constructor() { }
 
   ngOnInit(): void {

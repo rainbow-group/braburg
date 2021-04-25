@@ -7,20 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
-    path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
-  },
-  {
-    path: 'products',
-    loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule),
-  },
-  {
-    path: 'join',
-    loadChildren: () => import('./pages/join/join.module').then(m => m.JoinModule),
-  },
-  {
-    path: 'contact',
-    loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule),
+    path: 'app',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
   },
   {
     path: '**',
