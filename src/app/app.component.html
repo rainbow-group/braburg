@@ -1,2 +1,27 @@
-<router-outlet></router-outlet>
+<div id="page-wrapper">
+  <header id="header">
+    <h1 id="logo"><a [routerLink]="['home']"><img [src]="images.logo"></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a [routerLink]="['/app', 'products']">产品中心</a></li>
+        <li><a [routerLink]="['/app', 'join']">招商加盟</a></li>
+        <li><a [routerLink]="['/app', 'contact']">联系我们</a></li>
+      </ul>
+    </nav>
+  </header>
+  <router-outlet></router-outlet>
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+      <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+      <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <ul class="copyright">
+      <li>&copy; 德莱堡. All rights reserved.</li><li>Design: Rainbow Group</li>
+    </ul>
+  </footer>
 
+</div>

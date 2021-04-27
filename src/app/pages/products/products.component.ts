@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DbService} from '../../shared/service/db.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dbService: DbService) { }
+
+  categories;
+  selectedCategory;
 
   ngOnInit(): void {
+    if (!this.selectedCategory){
+      this.selectedCategory = 1;
+    }
+    this.dbService.getProdCategories().subscribe(response => {
+      this.categories = response;
+    });
   }
-
 }

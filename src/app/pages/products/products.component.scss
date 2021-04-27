@@ -1,0 +1,17 @@
+.active{
+  background-color: #e44c65;
+  color: #ffffff;
+}
+
+
+#sidebar{
+  button {
+    border-radius: 4px;
+    transition-duration: 0.4s;
+  }
+
+  button:hover {
+    background-color: #e76278;
+    color: #ffffff;
+  }
+}

@@ -1,26 +1,55 @@
-<div class="content">
-  <mat-toolbar class="rb-header">
-    <a [routerLink]="['home']"><img [src]="images.logo"></a>
-    <div fxFlex="1 1 auto"></div>
-    <div class="menu-right">
-      <button [routerLink]="['/app', 'about']" mat-button>品牌文化</button>
-      <button [routerLink]="['/app', 'products']" mat-button>产品中心</button>
-      <button [routerLink]="['/app', 'join']" mat-button>招商加盟</button>
-      <button [routerLink]="['/app', 'contact']" mat-button>联系我们</button>
-    </div>
-  </mat-toolbar>
-  <div class="about">
-    <div class="about-p">
-      <div class="about-title">
-        <img [src]="images.about"/>
-        <div>
-          来自德国的世界顶级专业厨房电器品牌BRABURG，凭其非凡的品质演绎了一个高端品牌的创新历程和领驭之道。
-          BRABURG这个动听的名字，来自于德国著名的勃兰登堡州，与柏林构成德国的首都地区，拥有美丽的松树林、丘陵、湖泊，为BRABURG这个独具匠心的品牌树立了高品质、艺术化的独特个性。
+<section id="banner">
+  <div class="content">
+    <header>
+      <h2>德莱堡</h2>
+      <h2>德国经典厨房艺术</h2>
+      <p>BRABURG</p>
+      <p>Germany Artistic Kitchen</p>
+    </header>
+    <span class="image"><img [src]="images.s1" alt="" /></span>
+  </div>
+  <a (click)="goDistance('one')" class="goto-next scrolly">Next</a>
+</section>
+
+<section id="one" #one class="spotlight style1 bottom">
+  <span class="image fit main"><img [src]="images.s2" alt="" /></span>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 col-12-medium">
+          <header>
+            <h2>来自德国的世界顶级专业厨房电器品牌BRABURG</h2>
+          </header>
+        </div>
+        <div class="col-4 col-12-medium">
+          <p>BRABURG这个动听的名字,来自于德国著名的勃兰登堡州,
+            与柏林构成德国的首都地区,拥有美丽的松树林,丘陵,湖泊,
+            为BRABURG这个独具匠心的品牌树立了高品质,艺术化的独特个性
+          </p>
+        </div>
+        <div class="col-4 col-12-medium">
+          <p>凭其非凡的品质演绎了一个高端品牌的创新历程和领驭之道</p>
         </div>
       </div>
     </div>
   </div>
-  <mat-toolbar class="rb-footer">
-    <span>Website of BRAGURG</span>
-  </mat-toolbar>
-</div>
+  <a (click)="goDistance('two')" class="goto-next scrolly">Next</a>
+</section>
+
+<section id="two" #two class="spotlight style2 right">
+  <span class="image fit main"><img [src]="images.s3" alt="" /></span>
+  <div class="content">
+    <header>
+      <h2>品牌文化</h2>
+      <p>作为享誉全球的厨卫品牌，德国BRABURG博莱堡一直致力于研发、生产、销售世界顶级品质的厨房家电产品——吸油烟机、燃气灶、烤箱、蒸汽烤箱、蒸汽炉、微波炉、咖啡机、酒柜、洗碗机、热水器等......每一件BRABURG产品，都源于传统的技术，严谨的工艺，简约的设计和完美的品质。</p>
+    </header>
+    <p>
+      品牌驱动--德国科技，品质生活<br>
+      品牌理念--艺术，科技，品质<br>
+      品牌承诺--享受德国经典式家居生活<br>
+      品牌价值--品质，创新，艺术享受<br>
+      消费者态度--关爱健康，注重厨房美学
+    </p>
+  </div>
+  <a class="goto-next scrolly">Next</a>
+</section>
