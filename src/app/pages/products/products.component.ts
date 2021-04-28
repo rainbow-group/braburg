@@ -21,4 +21,10 @@ export class ProductsComponent implements OnInit {
       this.categories = response;
     });
   }
+
+  selectCategory(item): void {
+    if (item){
+      this.selectedCategory = item.id;
+    }
+  }
 }
