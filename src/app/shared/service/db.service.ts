@@ -14,4 +14,8 @@ export class DbService {
   getProdCategories(): Observable<any>{
     return this.http.get(`${this.dbUrl}/prod/categories`);
   }
+
+  getProdListByCategory(categoryId): Observable<any>{
+    return this.http.get(`${this.dbUrl}/prod/list/${categoryId}`);
+  }
 }

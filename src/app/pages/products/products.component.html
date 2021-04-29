@@ -22,8 +22,15 @@
 
         <!-- Content -->
         <section id="content">
-          <a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+          <div class="row gtr-50 gtr-uniform" *ngIf="productRepo && productRepo[selectedCategory]">
+            <div class="col-4 col-6-xsmall" *ngFor="let prod of productRepo[selectedCategory]" (click)="showProd(prod)">
+              <div class="image fit">
+                <img [src]="prodImgBase + '/c-' + prod.categoryId + '/' + prod.picUrl" alt="" (error)="onImgError($event)">
+              </div>
+              <h4>{{prod.title}}</h4>
+            </div>
 
+          </div>
         </section>
 
       </div>
