@@ -5,34 +5,18 @@
       <p>来自德国的世界顶级专业厨房电器品牌BRABURG，以其精湛的工艺和非凡的品质，享誉全球；今天的BRABURG来到中国，用东方人的消费诉求，即将演绎一段新的传奇。</p>
     </header>
     <div class="row gtr-150">
-      <div class="col-4 col-12-medium">
-
-        <!-- Sidebar -->
+      <div class="col-3 col-12-medium">
         <section id="sidebar">
           <mat-action-list>
-            <button mat-list-item *ngFor="let item of categories" (click)="selectCategory(item)"
-                    [ngClass]="{'active': selectedCategory === item.id }">
+            <button mat-list-item *ngFor="let item of categories" [routerLink]="[prodBasePath, 'list', item.id]"
+                   (click)="selectCategory(item)" [ngClass]="{'active': selectedCategory === item.id }">
               {{item.name}}
             </button>
           </mat-action-list>
         </section>
-
       </div>
-      <div class="col-8 col-12-medium imp-medium">
-
-        <!-- Content -->
-        <section id="content">
-          <div class="row gtr-50 gtr-uniform" *ngIf="productRepo && productRepo[selectedCategory]">
-            <div class="col-4 col-6-xsmall" *ngFor="let prod of productRepo[selectedCategory]" (click)="showProd(prod)">
-              <div class="image fit">
-                <img [src]="prodImgBase + '/c-' + prod.categoryId + '/' + prod.picUrl" alt="" (error)="onImgError($event)">
-              </div>
-              <h4>{{prod.title}}</h4>
-            </div>
-
-          </div>
-        </section>
-
+      <div class="col-9 col-12-medium imp-medium">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

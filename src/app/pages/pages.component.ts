@@ -6,7 +6,6 @@ import * as constants from '../shared/constants';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
-
   images = constants.images.pages;
   constructor() { }
 

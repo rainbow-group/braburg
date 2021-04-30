@@ -1,0 +1,41 @@
+<div class="row gtr-150">
+  <div class="col-4 col-12-medium">
+    <section id="sidebar">
+      <div *ngIf="prod">
+        <img [src]="prodImgBase + '/c-' + prod.categoryId + '/' + prod.picUrl" alt="" (error)="onImgError($event)">
+        <h4>{{prod.title}}</h4>
+      </div>
+    </section>
+  </div>
+  <div class="col-8 col-12-medium imp-medium">
+    <mat-action-list id="tabs">
+      <button mat-list-item [ngClass]="{'active': selectedTab === 1 }" (click)="selectedTab = 1">产品特点</button>
+      <button mat-list-item [ngClass]="{'active': selectedTab === 2 }" (click)="selectedTab = 2">技术参数</button>
+      <button mat-list-item [ngClass]="{'active': selectedTab === 3 }" (click)="selectedTab = 3">安装图示</button>
+    </mat-action-list>
+    <mat-divider></mat-divider>
+    <div *ngIf="prod && selectedTab === 1" class="prod-info">
+      <div *ngFor="let info of prod.infoList">
+        <li *ngIf="info?.imgTag !=='Y'">
+          {{info.content}}
+        </li>
+        <img *ngIf="info?.imgTag ==='Y'" [src]="prodImgBase + '/c-' + prod.categoryId + '/' + info.content">
+      </div>
+    </div>
+    <div *ngIf="prod && selectedTab === 2"  class="prod-info">
+      <div class="table-wrapper">
+        <table class="alt">
+          <tbody>
+            <tr *ngFor="let param of prod.paramsList">
+              <td>{{param.name}}</td>
+              <td>{{param.content}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngIf="prod && selectedTab === 3">
+      3
+    </div>
+  </div>
+</div>

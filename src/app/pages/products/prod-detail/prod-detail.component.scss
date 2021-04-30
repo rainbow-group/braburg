@@ -1,0 +1,29 @@
+#tabs {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+
+  button {
+    border-radius: 4px;
+    transition-duration: 0.4s;
+  }
+
+  button:hover {
+    background-color: #e76278;
+    color: #ffffff;
+  }
+}
+
+.active{
+  background-color: #e44c65;
+  color: #ffffff;
+}
+
+.prod-info {
+  font-size: 16px;
+  li{
+    list-style-type: square;
+  }
+}
+
+

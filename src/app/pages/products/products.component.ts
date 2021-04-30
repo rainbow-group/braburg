@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DbService} from '../../shared/service/db.service';
+import {Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -8,58 +9,27 @@ import {DbService} from '../../shared/service/db.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private dbService: DbService) {
+  constructor(private dbService: DbService, private router: Router) {
   }
 
   categories;
   selectedCategory;
-  productRepo;
-  prodImgBase = 'assets/images/prods';
-  imgBase = 'assets/images';
+  prodBasePath = '/app/products';
 
   ngOnInit(): void {
-    if (!this.selectedCategory) {
-      this.selectedCategory = 2;
-    }
     this.dbService.getProdCategories().subscribe(response => {
       this.categories = response;
-      if (this.categories) {
-        this.productRepo = {};
-
-        for (const item of this.categories) {
-          if (item) {
-            this.productRepo[item.id] = void (0);
-          }
-        }
-        this.loadDate();
+      if (!this.selectedCategory) {
+        this.selectedCategory = 1;
       }
-    });
-  }
 
-  loadDate(): void {
-    if (!this.productRepo[this.selectedCategory]) {
-      this.dbService.getProdListByCategory(this.selectedCategory).subscribe(prods => {
-        this.productRepo[this.selectedCategory] = prods;
-      });
-    }
+      this.router.navigate([this.prodBasePath, 'list', this.selectedCategory]);
+    });
   }
 
   selectCategory(item): void {
     if (item) {
       this.selectedCategory = item.id;
-      this.loadDate();
-    }
-  }
-
-  showProd(prod): void {
-    if (prod) {
-      console.info(prod);
-    }
-  }
-
-  onImgError(e): void {
-    if (e) {
-      e.target.attributes.src.value = this.imgBase + '/nf.jpg';
     }
   }
 }
