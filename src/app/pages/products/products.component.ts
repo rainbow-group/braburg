@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
     this.dbService.getProdCategories().subscribe(response => {
       this.categories = response;
       if (!this.selectedCategory) {
-        this.selectedCategory = 1;
+        this.selectedCategory = this.categories[0].id;
       }
 
       this.router.navigate([this.prodBasePath, 'list', this.selectedCategory]);

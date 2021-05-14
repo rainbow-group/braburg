@@ -1,6 +1,6 @@
 <section id="content">
   <div class="row gtr-50 gtr-uniform" *ngIf="prodList">
-    <div class="col-4 col-6-xsmall" *ngFor="let prod of prodList" [routerLink]="[prodDetailPath, prod.id]">
+    <div class="col-4 col-12-medium" *ngFor="let prod of prodList" [routerLink]="[prodDetailPath, prod.id]">
       <div class="image fit">
         <img [src]="prodImgBase + '/c-' + prod.categoryId + '/' + prod.picUrl" alt="" (error)="onImgError($event)">
       </div>

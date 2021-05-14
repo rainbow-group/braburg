@@ -22,7 +22,7 @@
         <img *ngIf="info?.imgTag ==='Y'" [src]="prodImgBase + '/c-' + prod.categoryId + '/' + info.content">
       </div>
     </div>
-    <div *ngIf="prod && selectedTab === 2"  class="prod-info">
+    <div *ngIf="prod && selectedTab === 2" class="prod-info">
       <div class="table-wrapper">
         <table class="alt">
           <tbody>
@@ -34,8 +34,8 @@
         </table>
       </div>
     </div>
-    <div *ngIf="prod && selectedTab === 3">
-      3
+    <div *ngIf="prod && selectedTab === 3" class="prod-info">
+      <img [src]="prodImgBase + '/c-' + prod.categoryId + '/' + prod.installUrl" alt="" (error)="onImgError($event)">
     </div>
   </div>
 </div>

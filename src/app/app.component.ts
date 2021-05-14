@@ -8,6 +8,4 @@ import * as constants from './shared/constants';
 })
 export class AppComponent {
   title = 'braburg';
-
-  images = constants.images.home;
 }

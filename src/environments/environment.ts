@@ -7,7 +7,7 @@ export const environment = {
 };
 
 export const apiBaseUrls = {
-  dsBaseUrl: 'http://localhost:8088',
+  dsBaseUrl: 'http://zhouhan0705.eicp.net:8085',
   rainbowDataEndpoint: '/rainbow-ds/api',
 };
 /*

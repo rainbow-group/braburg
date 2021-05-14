@@ -20,9 +20,6 @@ export class ProdListComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((val: any) => {
       this.cid = val.cid;
-      if (!this.cid) {
-        this.cid = 1;
-      }
       this.loadDate();
     });
   }
